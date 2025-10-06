@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali 2025 ✨</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #2b0000, #000);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: 700;
+    color: gold;
+    margin-top: 25px;
+    text-shadow: 0 0 15px orange, 0 0 35px red;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px gold; }
+    to { text-shadow: 0 0 30px orange; }
+  }
+
+  .card {
+    margin-top: 30px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+  }
+
+  .message {
+    font-size: 1.2em;
+    color: #ffd700;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #ffb300;
+  }
+
+  input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, gold, orange);
+    color: #3b0000;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gold;
+  }
+
+  .share-btn {
+    margin-top: 20px;
+    background: #25D366;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .share-btn:hover {
+    background: #1DA851;
+    transform: scale(1.05);
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #bbb;
+  }
+
+  @media (max-width: 600px) {
+    header { font-size: 1.8em; }
+    .message { font-size: 1em; }
+  }
+</style>
+</head>
+<body>
+
+<header>✨ Happy Diwali 2025 ✨</header>
+
+<div class="card">
+  <img src="https://i.ibb.co/qMqhzV8d/your-image.jpg" alt="Diwali Lights">
+  <div class="message">May your Diwali be filled with happiness and light!</div>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <br>
+  <button onclick="generateLink()">Generate Wish</button>
+
+  <a id="whatsappLink" class="share-btn" style="display:none;" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20"> Share on WhatsApp
+  </a>
+</div>
+
+<footer>Created with ❤️ by Rishav Heartbeat</footer>
+
+<script>
+function generateLink() {
+  const name = document.getElementById('nameInput').value.trim();
+  const whatsappLink = document.getElementById('whatsappLink');
+
+  if (name) {
+    // Use only safe emojis and proper newlines
+    const message = [
+      `🎆 *${name} wishes you a very Happy Diwali!* 🎇`,
+      '',
+      'May your life be full of joy, peace, and divine light! 🪔✨',
+      '',
+      `Visit: ${location.origin + location.pathname}`
+    ].join('%0A'); // WhatsApp line break encoding
+
+    whatsappLink.href = `https://wa.me/?text=${message}`;
+    whatsappLink.style.display = 'inline-flex';
+  } else {
+    alert('Please enter your name first!');
+  }
+}
+</script>
